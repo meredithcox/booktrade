@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    render :template => 'sessions/create'
   end
   
   def show
@@ -11,8 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the DA Book Exchange!"
-      session[:user_id] = @user.id
+      flash[:success] = "Welcome to the DA Book Exchange! Log in at the top right corner"
       redirect_to root_path
     else
       render 'new'
