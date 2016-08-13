@@ -1,0 +1,16 @@
+<h1>show</h1>
+<div class = "panel panel-default">
+  <div class = "panel panel-default">
+    <b>Title: </b><%= @post.title %><br>
+    <b>Author: </b><%= @post.author %><br>
+    <b>ISBN: </b><%= @post.isbn %><br>
+    <b>Subject: </b><%= @post.subject %><br>
+  </div>
+  <div class = "panel panel-body">
+    <b>Description: </b><%= @post.description %><br>
+  </div>
+<div class = "panel panel-footer">
+  <b>Owner Email: </b><%= @post.email %><br>
+</div>
+</div>
+<h3><%= link_to 'Back to books', posts_path %></h3>

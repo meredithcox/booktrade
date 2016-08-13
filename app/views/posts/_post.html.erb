@@ -1,0 +1,28 @@
+<li id="post-<%= post.id %>">
+ 
+  
+<div class = "panel panel-default" align="left">
+    <div class = "panel panel-default">
+        <b>Title: </b><%= post.title %><br>
+        <b>Author: </b><%= post.author %><br>
+        <b>ISBN: </b><%= post.isbn %><br>
+        <b>Subject: </b><%= post.subject %><br>
+    </div>
+    <div class = "panel panel-body">
+        <b>Description: </b><%= post.description %><br>
+    </div>
+    <div class = "panel panel-footer">
+      <b>Owner Email: </b><%= post.email %><br>
+      Posted <%= time_ago_in_words(post.created_at) %> ago.
+    </div>
+</div>
+
+<%if false %>
+  <span class="user"><%= link_to post.user.name, post.user %></span>
+  <span class="content"><%= post.description %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </span>
+<%end%>
+ 
+</li>

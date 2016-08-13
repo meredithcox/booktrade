@@ -8,4 +8,13 @@
       </h1>
     </section>
   </aside>
+  
+  <div class="col-md-8" align="center">
+    <% if @user.posts.any? %>
+      <h3>Available Books (<%= @user.posts.count %>)</h3>
+      <ul style="list-style-type:none">
+        <%= render @user.posts %>
+      </ul>
+    <% end %>
+  </div>
 </div>
