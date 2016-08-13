@@ -7,5 +7,4 @@ class Post < ApplicationRecord
   validates :email, presence: true 
   validates :author, presence: true
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
-  validates :description, presence: true, length: { maximum: 10000 }
 end

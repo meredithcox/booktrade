@@ -46,7 +46,11 @@
   <%= f.text_field :email %>
 </p>
 <p>
-  <%= f.submit "Create Post", class: "btn btn-primary btn-lg" %>
+  <%if yield(:title) == "New Listing" %>
+    <%= f.submit "Create Listing", class: "btn btn-primary btn-lg" %>
+  <%else%>
+    <%= f.submit "Edit Listing", class: "btn btn-primary btn-lg" %>
+  <%end%>
 </p>
  
 <% end %>
