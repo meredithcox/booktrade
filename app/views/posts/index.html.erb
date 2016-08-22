@@ -2,7 +2,8 @@
 <h1>Books</h1>
 <div align="center">
 <%= link_to "<button type = \"button\" class= \"btn btn-lg btn-primary\">Add</button>".html_safe, 'posts/new'%></button>
-<table class = "table table-hover">
+<br><br>
+<table class = "table table-hover table-striped">
   <tr>
     <th>Book</th>
     <th>Author</th>
@@ -10,19 +11,16 @@
     <th>Owner Email</th>
     <th colspan="4"></th>
   </tr>
-  <% @posts.map do |post| %>
-    <% post.title = post.title.downcase %>
-  <%end%>  
 
-  <% @posts = @posts.sort_by { |a| [a.subject,a.title]} %><br>
+  <% @posts = @posts.sort_by { |a| [a.subject,a.title.downcase]} %>
   
   <% @posts.map do |post| %>
-    <% splittext = post.title.split(" ") %><br>
+    <% splittext = post.title.split(" ") %>
     <% splittext.map do |word| %>
       <% word[0] = word[0].capitalize %>
     <% end %>
     <% post.title = splittext.join(" ") %>
-    <% splittext = post.author.split(" ") %><br>
+    <% splittext = post.author.split(" ") %>
     <% splittext.map do |word| %>
       <% word[0] = word[0].capitalize %>
     <% end %>
@@ -39,9 +37,9 @@
     <% if post.user_id == @user.id %>
       <td>&nbsp;<%= link_to 'Edit', edit_post_path(post) %></td>
       <td>&nbsp;<%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
-     <%else%>
-        <td></td>
-        <td></td>
+    <%else%>
+      <td></td>
+      <td></td>
     <%end%>
     </tr>
   <% end %>

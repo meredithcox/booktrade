@@ -57,13 +57,31 @@ p {
   line-height: 1.7em;
 }
 
+.jumbotron{
+  background-color: #36454f;
+  color: #fff;
+  h1{
+    font-family:"Courier";
+  }
+  h2{
+    margin-left:60px;
+    margin-right: 60px;
+  }
+}
+.btn{
+  background-color: transparent;
+  border-color: #3399ff;
+  color:#3399ff;
+}
+
+
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -71,10 +89,22 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 
+.navbar{
+  background-color:#fff;
+  border-color: #E7E7E7;
+}
+
+#links{
+  color:light gray;
+}
+
+#links:hover{
+  color: black;
+}
 /* footer */
 
 footer {

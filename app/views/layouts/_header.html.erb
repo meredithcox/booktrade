@@ -1,21 +1,21 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Book Exchange", root_path, id: "logo" %>
+    <%= link_to "DA Book Exchange", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Home", root_path, id:"links" %></li>
         
 
         <% if logged_in? %>
-          <li><%= link_to "Books", posts_path %></li>
-          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Books", posts_path, id:"links" %></li>
+          <li><%= link_to "Profile", current_user,id:"links" %></li>
           <li class="divider"></li>
           <li>
-            <%= link_to "Log out", logout_path, method: :delete %>
+            <%= link_to "Log out", logout_path, method: :delete, id:"links" %>
           </li>
 
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Log in", login_path, id:"links" %></li>
         <% end %>
         
         
