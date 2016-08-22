@@ -6,6 +6,7 @@
   <tr>
     <th>Book</th>
     <th>Author</th>
+    <th>Subject</th>
     <th>Owner Email</th>
     <th colspan="4"></th>
   </tr>
@@ -13,7 +14,7 @@
     <% post.title = post.title.downcase %>
   <%end%>  
 
-  <% @posts = @posts.sort_by { |a| a.title} %><br>
+  <% @posts = @posts.sort_by { |a| [a.subject,a.title]} %><br>
   
   <% @posts.map do |post| %>
     <% splittext = post.title.split(" ") %><br>
@@ -33,6 +34,7 @@
     <tr>
       <td><%= link_to post.title, post_path(post) %></td>
       <td><%= post.author %></td>
+      <td><%=post.subject%></td>
       <td><%= post.email %></td>
     <% if post.user_id == @user.id %>
       <td>&nbsp;<%= link_to 'Edit', edit_post_path(post) %></td>
