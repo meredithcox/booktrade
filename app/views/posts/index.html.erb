@@ -3,6 +3,20 @@
 <div align="center">
 <%= link_to "<button type = \"button\" class= \"btn btn-lg btn-primary\">Add</button>".html_safe, 'posts/new'%></button>
 <br><br>
+<b>Search by book, author, subject, or ISBN:</b>
+<div class = "box">
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+    <%= submit_tag "Search", :name => nil, class:"btn btn-primary" %>
+<% end %>
+</div>
+<% if request.original_url.include? "search"%>
+  <%= link_to "All books", posts_path, class:"btn btn-primary"%>
+<%end%> <br><br>
+<% if @posts.blank? %>
+  <h4>There are no books containing the term <%= params[:search] %>.</h4>
+  <h3><%= link_to "Back to books", posts_path%></h3>
+<%else%>
 <table class = "table table-hover table-striped">
   <tr>
     <th>Book</th>
@@ -45,4 +59,4 @@
   <% end %>
 </table>
 </div>
-
+<% end %>
