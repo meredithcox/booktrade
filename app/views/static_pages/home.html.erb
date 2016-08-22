@@ -2,13 +2,18 @@
 
 <div class="center jumbotron">
   <h1>DA Book Exchange</h1>
-
+  <% if !logged_in? %>
   <h2>
     <font color="ff3399">Tired of selling back your 150 dollar book for ten bucks?</font><br><br>
     <font color = "ffff99">Did you buy books for a class you ended up dropping?</font><br><br>
     <font color ="99ff99">Want to sell to someone who needs your books right away?</font><br><br>
     <font color = "white">Sign up to sell and see what books your classmates are selling. </font>
   </h2>
+  <% else %>
+  <h2>
+    Welcome!
+  </h2>
+  <%end%>
   <% if !logged_in? %>
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   <%else%>
