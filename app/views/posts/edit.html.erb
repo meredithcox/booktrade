@@ -1,3 +1,13 @@
 <% provide(:title,"Edit Listing") %>
-<h1>Edit Listing</h1>
-<%= render 'form'%>
+<%if @post.user_id == current_user.id %>
+    <h1>Edit Listing</h1>
+    <%= render 'form'%>
+<%else%>
+    <div align="center">
+    <h3>You cannot edit this post.
+    <br>
+    <br>
+    <%= link_to "Back to books", posts_path %>
+    </h3>
+    </div>
+<%end%>
