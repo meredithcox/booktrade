@@ -26,19 +26,19 @@
 </p>
 
 <p>
-  <%= f.label :isbn, "ISBN" %><br>
+  <%= f.label :isbn, "ISBN (optional)" %><br>
   <%= f.text_field :isbn %>
 </p>
 <p>
   <%= f.label :subject %><br>
 <%= f.select(:subject) do %>
-  <% ['Algebra I/II','Biology','Chemistry','Chinese','Computer Science','Economics','English', 'Environmental Science','Fine Arts','French','Geometry','History','Latin','Music Theory','Physics','Post-Calculus','Precalculus/Calculus','Psychology','Spanish','Statistics','Other'].each do |c| %>
+  <% ['Algebra I/II','Biology','Calculus','Chemistry','Chinese','Computer Science','Economics','English', 'Environmental Science','Fine Arts','French','Geometry','History','Latin','Music Theory','Physics','Post-Calculus','Precalculus','Psychology','Spanish','Statistics','Other'].each do |c| %>
     <%= content_tag(:option, c, value: c) %>
   <% end %>
 <% end %>
 </p>
 <p>
-  <%= f.label :description %><br>
+  <%= f.label :description, "Description (condition, price, etc)" %><br>
   <%= f.text_area :description %>
 </p>
 <p>
